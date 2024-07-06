@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .form-section {
+            padding: 40px 0;
+        }
+        .section-title {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .save-btn {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Edit Profile Information</h1>
+    </header>
+
+    <div class="container form-section">
+        <form>
+            <!-- Biographical Information -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Biographical Information</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Contact Details</h2>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Sets -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Skill Sets</h2>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" class="form-control" id="skills" placeholder="Enter your skills">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="form-group">
+                        <label for="work-experience">Work Experience</label>
+                        <textarea class="form-control" id="work-experience" rows="4" placeholder="Enter your work experience"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Education</h2>
+                    <div class="form-group">
+                        <label for="education">Education</label>
+                        <textarea class="form-control" id="education" rows="4" placeholder="Enter your education details"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="form-group">
+                        <label for="certifications">Certifications</label>
+                        <textarea class="form-control" id="certifications" rows="4" placeholder="Enter your certifications"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Showcase -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Project Showcase</h2>
+                </div>
+                <div id="project-showcase-container" class="col-12">
+                    <div class="form-group project-group">
+                        <label for="project1-title">Project Title 1</label>
+                        <input type="text" class="form-control" id="project1-title" placeholder="Enter project title">
+                        <label for="project1-description">Project Description 1</label>
+                        <textarea class="form-control" id="project1-description" rows="2" placeholder="Enter project description"></textarea>
+                        <label for="project1-link">Project Link 1</label>
+                        <input type="url" class="form-control" id="project1-link" placeholder="Enter project link">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-secondary" id="add-project-btn">Add Project</button>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="row">
+                <div class="col-12 save-btn">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('add-project-btn').addEventListener('click', function() {
+            var projectContainer = document.getElementById('project-showcase-container');
+            var newProjectGroup = document.createElement('div');
+            newProjectGroup.className = 'form-group project-group';
+            newProjectGroup.innerHTML = `
+                <label for="project-title">Project Title</label>
+                <input type="text" class="form-control" name="project-title" placeholder="Enter project title">
+                <label for="project-description">Project Description</label>
+                <textarea class="form-control" name="project-description" rows="2" placeholder="Enter project description"></textarea>
+                <label for="project-link">Project Link</label>
+                <input type="url" class="form-control" name="project-link" placeholder="Enter project link">
+            `;
+            projectContainer.appendChild(newProjectGroup);
+        });
+    </script>
+</body>
+</html>
